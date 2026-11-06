@@ -1,0 +1,65 @@
+/* src/app/globals.css — Global styles with Tailwind CSS v4 */
+@import "tailwindcss";
+
+/* Custom CSS Variables for theming */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #1877f2;
+  --primary-dark: #166fe5;
+  --secondary: #e4e6eb;
+  --success: #31a24c;
+  --warning: #f7b928;
+  --danger: #e74c3c;
+  --chat-bg: #f0f2f5;
+  --sidebar-width: 280px;
+  --navbar-height: 56px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --secondary: #2d2d2d;
+    --chat-bg: #18191a;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-chat-bg: var(--chat-bg);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Base styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbar for chat windows */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth transitions for responsive layout */
+* {
+  transition-property: background-color, border-color;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
